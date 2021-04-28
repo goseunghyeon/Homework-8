@@ -43,6 +43,7 @@ int main()
 	listNode* headnode = NULL;
 
 	do {
+		printf("[----- [고승현] [2016039086] -----]\n");
 		printf("----------------------------------------------------------------\n");
 		printf("                  Doubly Circular Linked List                   \n");
 		printf("----------------------------------------------------------------\n");
@@ -108,7 +109,9 @@ int main()
 
 int initialize(listNode** h) {
 
-	/* headNode가 NULL이 아니면, freeNode를 호출하여 할당된 메모리 모두 해제 */
+	/* headNode가 NULL이 아니면, freeNode를 호출하여 할당된 메모리 모두 해제
+	이중포인터로 매개변수를 받았으므로 해당 함수에서 메인함수의 포인터의 값을 수정해서
+	적용하여 리턴해준다 */
 	if (*h != NULL)
 		freeList(*h);
 
@@ -120,7 +123,9 @@ int initialize(listNode** h) {
 	return 1;
 }
 
-/* 메모리 해제 */
+/* 메모리 해제 
+preview를 통해서 차례로 메모리를 해제하고 전부 해제후
+마지막에는 h의 구조체에 해당하는 메모리를 해제해준다*/
 int freeList(listNode* h) {
 	listNode* p;
 	listNode* preview=h;
@@ -187,6 +192,8 @@ void printList(listNode* h) {
 
 /**
  * list에 key에 대한 노드하나를 추가
+ * 포인터 변수p를통해서 알맞는 값의 위치를 찾고 연결해준다
+ * 아무런 노드가 없는 경우 처음위치에 넣는것과 동일해서 insertFirst()이용
  */
 int insertLast(listNode* h, int key) {
 	listNode* p;
@@ -212,6 +219,8 @@ int insertLast(listNode* h, int key) {
 
 /**
  * list의 마지막 노드 삭제
+ * 만약에 아무런 노드가 없는경우 즉 초기화만 시켜준경우 h를 free
+ * 그외의 경우는 노드가 있으므로 마지막 노드를 free 
  */
 int deleteLast(listNode* h) {
 	listNode* p;
@@ -235,6 +244,7 @@ int deleteLast(listNode* h) {
 
 /**
  * list 처음에 key에 대한 노드하나를 추가
+ * 초기화를 시켜준후 첫번째 위치에 노드를 추가
  */
 int insertFirst(listNode* h, int key) {
 	listNode* p;
@@ -263,6 +273,8 @@ int insertFirst(listNode* h, int key) {
 
 /**
  * list의 첫번째 노드 삭제
+ * 노드가 없는 경우 초기화시 생성한 노드를 해제
+ * 그외의 경우는 노드가 있으므로 해제
  */
 int deleteFirst(listNode* h) {
 	listNode* p;
@@ -290,6 +302,8 @@ int deleteFirst(listNode* h) {
 
 /**
  * 리스트의 링크를 역순으로 재 배치
+ * llink와rlink의 위치를 바꿔서 역순으로 배치
+ * head노드의 링크로 마지막에 바꾼다
  */
 int invertList(listNode* h) {
 	listNode* p;
@@ -312,6 +326,8 @@ int invertList(listNode* h) {
 
 /**
  *  리스트를 검색하여, 입력받은 key보다 큰값이 나오는 노드 바로 앞에 삽입
+ * 크기를 비교해서 알맞은 위치에 노드를 삽입
+ * 만약에 가장큰경우 마지막 값까지 비교후 노드를 마지막에 삽입
  **/
 int insertNode(listNode* h, int key) {
 	listNode* p;
@@ -348,6 +364,7 @@ int insertNode(listNode* h, int key) {
 
 /**
  * list에서 key에 대한 노드 삭제
+ * 반복문을 돌면서 키값과 알맞은 노드를 삭제
  */
 int deleteNode(listNode* h, int key) {
 	listNode* p;
