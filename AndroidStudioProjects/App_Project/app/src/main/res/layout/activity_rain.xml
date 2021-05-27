@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ViewFlipper
+        android:id="@+id/viewFliper1"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="412dp"
+                android:layout_height="711dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                app:srcCompat="@drawable/rain" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="147dp"
+                android:gravity="center_horizontal"
+                android:text="\n비가 내리고 있습니다..."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="20px"
+                android:background="@color/black"
+                android:text="Next"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:backgroundTint="@color/white" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="611dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/umbrella" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="\n우산이 떨어져 있네요..."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="20px"
+                android:background="@color/white"
+                android:text="Next"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:backgroundTint="@color/white" /> />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:layout_marginTop="250px"
+                android:gravity="center_horizontal"
+                android:text="\n앞에 떨어진 우산의 색깔은?"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="60px" />
+
+            <RadioGroup
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Red"
+                    android:textColor="#F44336" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Purple"
+                    android:textColor="#673AB7" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Yellow"
+                    android:textColor="#FFEB3B" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Blue"
+                    android:textColor="#3F51B5" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="20px"
+                android:text="End"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:backgroundTint="@color/white" />
+
+
+        </FrameLayout>
+
+    </ViewFlipper>
+    </LinearLayout>
+
+</LinearLayout>

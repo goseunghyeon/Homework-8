@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">basic</string>
+    <string name="string_01">안드로이드시작\n시작한\n이거다잉</string>
+    <string name="string_02">this is start</string>
+</resources>
